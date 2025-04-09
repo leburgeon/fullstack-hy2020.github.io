@@ -333,7 +333,7 @@ Once you have fixed all the issues and the Pokedex is bug-free, the workflow run
 
 The current set of tests uses [Jest](https://jestjs.io/) to ensure that the React components work as intended. This is essentially the same thing that is done in the section [Testing React apps](/en/part5/testing_react_apps) of part 5 with [Vitest](https://vitest.dev/). 
 
-Testing components in isolation is quite useful but that still does not ensure that the system as a whole works as we wish. To have more confidence about this, let us write a couple of really simple end-to-end tests similarly we did in section [part 5](/en/part5/). You could use [Playwright](https://playwright.dev/) or [Cypress](https://www.cypress.io/) for the tests.
+Testing components in isolation is quite useful but that still does not ensure that the system as a whole works as we wish. To have more confidence about this, let us write a couple of really simple end-to-end tests, similar to what we did in section [part 5](/en/part5/). You could use [Playwright](https://playwright.dev/) or [Cypress](https://www.cypress.io/) for the tests.
 
 No matter which you choose, you should extend Jest-definition in package.json to prevent Jest from trying to run the e2e-tests. Assuming that directory _e2e-tests_ is used for e2e-tests, the definition is:
 
@@ -365,7 +365,7 @@ describe('Pokedex', () => {
 })
 ```
 
-**Note** is that although the page renders the Pokemon names with an initial capital letter, the names are actually written with lowercase letters in the source, so you should test for <code>ivysaur</code> instead of <code>Ivysaur</code>!
+**Note** that although the page renders the Pokemon names with an initial capital letter, the names are actually written with lowercase letters in the source, so you should test for <code>ivysaur</code> instead of <code>Ivysaur</code>!
 
 Define a npm script <code>test:e2e</code> for running the e2e tests from the command line.
 
@@ -391,7 +391,7 @@ describe('Pokedex', function() {
 
 Define a npm script <code>test:e2e</code> for running the e2e tests from the command line.
 
-**Note** is that although the page renders the Pokemon names with an initial capital letter, the names are actually written with lowercase letters in the source, so you should test for <code>ivysaur</code> instead of <code>Ivysaur</code>!
+**Note** that although the page renders the Pokemon names with an initial capital letter, the names are actually written with lowercase letters in the source, so you should test for <code>ivysaur</code> instead of <code>Ivysaur</code>!
 
 Ensure that the test passes locally. Remember that the Cypress tests _assume that the application is up and running_ when you run the test! If you have forgotten the details, please see [part 5](/en/part5/end_to_end_testing) how to get up and running with Cypress.
 
@@ -408,13 +408,13 @@ Once the end-to-end test works in your machine, include it in the GitHub Action 
 
 Three options are used: [command](https://github.com/cypress-io/github-action#custom-test-command) specifies how to run Cypress tests, [start](https://github.com/cypress-io/github-action#start-server) gives npm script that starts the server, and [wait-on](https://github.com/cypress-io/github-action#wait-on) says that before the tests are run, the server should have started on url <http://localhost:5000>.
 
-Note that you need to build the app in GitHub Actions before it can be started in production mode!
+**Note** that you need to build the app in GitHub Actions before it can be started in production mode!
 
 **Once the pipeline works...**
 
 Once you are sure that the pipeline works, <i>write another test</i> that ensures that one can navigate from the main page to the page of a particular Pokemon, e.g. <i>ivysaur</i>. The test does not need to be a complex one, just check that when you navigate to a link, the page has some proper content, such as the string <i>chlorophyll</i> in the case of <i>ivysaur</i>.
 
-**Note** the Pokemon abilities are written with lowercase letters in the source code (the capitalization is done in CSS), so <i>do not</i> test for <i>Chlorophyll</i> but rather <i>chlorophyll</i>.
+**Note** that the Pokemon abilities are written with lowercase letters in the source code (the capitalization is done in CSS), so <i>do not</i> test for <i>Chlorophyll</i> but rather <i>chlorophyll</i>.
 
 The end result should be something like this
 
