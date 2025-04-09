@@ -420,6 +420,6 @@ The end result should be something like this
 
 ![e2e tests](../../images/11/9.png)
 
-End-to-end tests are nice since they give us confidence that software works from the end user's perspective. The price we have to pay is the slower feedback time. Now executing the whole workflow takes quite much longer.
+End-to-end tests are nice since they give us confidence that the application works from the end user's perspective. The price we pay is the slower feedback time; executing the whole workflow now takes *quite a bit* longer.
 
 </div>
